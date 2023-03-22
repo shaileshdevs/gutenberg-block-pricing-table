@@ -1,11 +1,11 @@
 <?php
 /**
  * Plugin Name:       Shailesh Gutenberg Blocks
- * Description:       Example block scaffolded with Create Block tool.
+ * Description:       Gutenber blocks to ease your tasks.
  * Requires at least: 6.1
  * Requires PHP:      7.0
  * Version:           0.1.0
- * Author:            The WordPress Contributors
+ * Author:            Shailesh
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       shailesh-gutenberg-blocks
