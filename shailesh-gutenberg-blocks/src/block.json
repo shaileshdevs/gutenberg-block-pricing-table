@@ -1,0 +1,43 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "shailesh-gutenberg-blocks/pricing-table",
+	"version": "0.1.0",
+	"title": "Pricing Table",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "Pricing table.",
+	"supports": {
+		"html": true
+	},
+	"textdomain": "shailesh-gutenberg-blocks",
+	"attributes":{
+		"price": {
+		  "type": "string",
+		  "default": "$50"
+		},
+		"features" : {
+			"type": "array",
+			"source": "query",
+			"selector": "ul.pricing_table-features-wrapper li",
+			"query": {
+				"text": {
+					"type": "string",
+					"source": "text",
+					"selector": ".pricing_table-feature-text"
+				}
+			},
+			"default": [
+				{ "text": "24*7 Service" },
+				{ "text": "Lifetime Support" }
+			]
+		},
+		"ctaText": {
+		  "type": "string",
+		  "default": "Buy Now"
+		}
+	},
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
