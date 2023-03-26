@@ -75,14 +75,16 @@ export default function Edit( props ) {
 			<ul className="pricing_table-features-wrapper">
 				{ features.map(
 					( { text }, index) => (
-						<RichText
-							key={index}
-							className="pricing_table-feature-li"
-							tagName="li"
-							value={ text }
-							onChange={ ( text ) => onFeatureChange("text", text, index) }
-						>
-						</RichText>
+						<li className="pricing_table-feature-li">
+							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 457.57"><path class="cls-1" d="M0,220.57c100.43-1.33,121-5.2,191.79,81.5,54.29-90,114.62-167.9,179.92-235.86C436-.72,436.5-.89,512,.24,383.54,143,278.71,295.74,194.87,457.57,150,361.45,87.33,280.53,0,220.57Z"/></svg>
+							<RichText
+								key={index}
+								tagName="span"
+								value={ text }
+								onChange={ ( text ) => onFeatureChange("text", text, index) }
+							>
+							</RichText>
+						</li>
 					)
 				)}
 			</ul>
@@ -97,9 +99,9 @@ export default function Edit( props ) {
 					{ __("Add Feature" ) }
 				</span>
 			</div>
-			<div className="pricig_table-cta-wrapper">
+			<div className="pricing_table-cta-wrapper">
 				<RichText
-					className="pricing-table-cta"
+					className="pricing_table-cta"
 					tagName="a"
 					placeholder={ __( 'Buy Now' ) }
 					value={ ctaText }
