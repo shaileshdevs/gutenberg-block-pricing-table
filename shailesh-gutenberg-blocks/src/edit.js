@@ -16,7 +16,7 @@ import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 
 import {
-	Button,
+	Button
 } from "@wordpress/components";
 
 /**
@@ -26,6 +26,11 @@ import {
  * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
  */
 import './editor.scss';
+
+/**
+ * Internal dependencies.
+ */
+import SettingsPane from './edit-settings-pane';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -38,7 +43,7 @@ import './editor.scss';
 export default function Edit( props ) {
 	const blockProps = useBlockProps();
 	const { attributes, setAttributes } = props;
-	const { price, features, ctaText } = attributes;
+	const { price, features, ctaText, priceTextColor, featureTextColor, featureTickColor, buyNowTextColor, buyNowBgColor } = attributes;
 
 	const onFeatureAdd = () => {
 		const count = attributes.features.length + 1;
@@ -70,18 +75,20 @@ export default function Edit( props ) {
 					placeholder={ __('$50') }
 					value={ price }
 					onChange={ ( price ) => setAttributes( { price } ) }
+					style={{ color: priceTextColor }}
 				/>
 			</div>
 			<ul className="pricing_table-features-wrapper">
 				{ features.map(
 					( { text }, index) => (
-						<li className="pricing_table-feature-li">
-							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 457.57"><path class="cls-1" d="M0,220.57c100.43-1.33,121-5.2,191.79,81.5,54.29-90,114.62-167.9,179.92-235.86C436-.72,436.5-.89,512,.24,383.54,143,278.71,295.74,194.87,457.57,150,361.45,87.33,280.53,0,220.57Z"/></svg>
+						<li className="pricing_table-feature-li" key={index}>
+							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 457.57" style={{ fill: featureTickColor }}><path className="cls-1" d="M0,220.57c100.43-1.33,121-5.2,191.79,81.5,54.29-90,114.62-167.9,179.92-235.86C436-.72,436.5-.89,512,.24,383.54,143,278.71,295.74,194.87,457.57,150,361.45,87.33,280.53,0,220.57Z"/></svg>
 							<RichText
 								key={index}
 								tagName="span"
 								value={ text }
 								onChange={ ( text ) => onFeatureChange("text", text, index) }
+								style={{ color: featureTextColor }}
 							>
 							</RichText>
 						</li>
@@ -106,8 +113,12 @@ export default function Edit( props ) {
 					placeholder={ __( 'Buy Now' ) }
 					value={ ctaText }
 					onChange={ ( ctaText ) => setAttributes( { ctaText } ) }
+					style={{ color: buyNowTextColor, backgroundColor: buyNowBgColor, borderColor: buyNowBgColor }}
 				/>
 			</div>
+			<SettingsPane {
+				...{ props }
+			} />
 		</div>
 	);
 }

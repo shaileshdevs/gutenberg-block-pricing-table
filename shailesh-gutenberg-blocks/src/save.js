@@ -22,7 +22,7 @@ export default function save( props ) {
 	const blockProps = useBlockProps.save();
 	const { attributes, setAttributes } = props;
 	// const { price, description, ctaText, ctaLink, showCTALink } = attributes;
-	const { price, features, ctaText } = attributes;
+	const { price, features, ctaText, priceTextColor, featureTextColor, featureTickColor, buyNowTextColor, buyNowBgColor } = attributes;
 
 	return (
 		<div {...blockProps}>
@@ -31,6 +31,7 @@ export default function save( props ) {
 					className="pricing_table-price"
 					tagName="h2"
 					value={ price }
+					style={{ color: priceTextColor }}
 				/>
 			</div>
 			<ul className="pricing_table-features-wrapper">
@@ -40,8 +41,8 @@ export default function save( props ) {
 							key={index}
 							className="pricing_table-feature-li"
 						>
-							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 457.57"><path class="cls-1" d="M0,220.57c100.43-1.33,121-5.2,191.79,81.5,54.29-90,114.62-167.9,179.92-235.86C436-.72,436.5-.89,512,.24,383.54,143,278.71,295.74,194.87,457.57,150,361.45,87.33,280.53,0,220.57Z"/></svg>
-							<span className="pricing_table-feature-text">
+							<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 457.57" style={{ fill: featureTickColor }}><path class="cls-1" d="M0,220.57c100.43-1.33,121-5.2,191.79,81.5,54.29-90,114.62-167.9,179.92-235.86C436-.72,436.5-.89,512,.24,383.54,143,278.71,295.74,194.87,457.57,150,361.45,87.33,280.53,0,220.57Z"/></svg>
+							<span className="pricing_table-feature-text" style={{ color: featureTextColor }}>
 								{text}
 							</span>
 						</li>
@@ -53,6 +54,7 @@ export default function save( props ) {
 					className="pricing_table-cta"
 					tagName="a"
 					value={ ctaText }
+					style={{ color: buyNowTextColor, backgroundColor: buyNowBgColor, borderColor: buyNowBgColor }}
 				/>
 			</div>
 		</div>

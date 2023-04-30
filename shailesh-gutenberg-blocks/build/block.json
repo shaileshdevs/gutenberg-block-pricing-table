@@ -39,6 +39,26 @@
     "ctaText": {
       "type": "string",
       "default": "Buy Now"
+    },
+    "priceTextColor": {
+      "type": "string",
+      "default": "#960000"
+    },
+    "featureTextColor": {
+      "type": "string",
+      "default": "#6d6d6d"
+    },
+    "featureTickColor": {
+      "type": "string",
+      "default": "#960000"
+    },
+    "buyNowTextColor": {
+      "type": "string",
+      "default": "#FFFFFF"
+    },
+    "buyNowBgColor": {
+      "type": "string",
+      "default": "#960000"
     }
   },
   "editorScript": "file:./index.js",
