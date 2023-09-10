@@ -5,7 +5,7 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-shailesh-gutenberg-blocks-pricing-table {
+ .wp-block-shailesh-gutenberg-blocks-pricing-table {
 	background-color: #fff;
     border: solid 1px #00000018;
 	border-radius: 8px;
@@ -23,6 +23,7 @@
 
 	.pricing_table-features-wrapper {
 		margin: 0;
+		padding: 0;
 
 		.pricing_table-feature-li {
 			list-style-type: none;

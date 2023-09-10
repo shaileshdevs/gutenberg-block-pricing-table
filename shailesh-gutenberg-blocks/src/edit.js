@@ -59,6 +59,11 @@ export default function Edit( props ) {
 		setAttributes({ features });
 	};
 
+	const onFeatureRemove = (position) => {
+		const newFeatures = attributes.features.filter((_, index) => index !== position);
+    	setAttributes({ features: newFeatures });
+	}
+
 	const onFeatureChange = (key, value, position) => {
 		const newFeatureList = attributes.features;
 		newFeatureList[position][key] = value;
@@ -91,6 +96,12 @@ export default function Edit( props ) {
 								style={{ color: featureTextColor }}
 							>
 							</RichText>
+							<Button
+								className="pricing_table-remove-feature-button"
+								label={ __("Remove feature" ) }
+								icon="remove"
+								onClick={ () => onFeatureRemove(index) }
+							></Button>
 						</li>
 					)
 				)}
