@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       Shailesh Gutenberg Blocks
+ * Plugin Name:       Shailesh Gutenberg Block Pricing Table
  * Description:       Gutenber blocks to ease your tasks.
  * Requires at least: 6.1
  * Requires PHP:      7.0
