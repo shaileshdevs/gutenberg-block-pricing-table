@@ -109,12 +109,12 @@ export default function Edit( props ) {
 			<div className="pricing_table-add-feature-wrapper">
 				<Button
 					className="pricing_table-add-feature-button"
-					label={ __("Add feature" ) }
+					label={ __( "Add feature" ) }
 					icon="plus-alt"
 					onClick={onFeatureAdd}
 				></Button>
 				<span className="pricing_table-add-feature-text">
-					{ __("Add Feature" ) }
+					{ __( "Add Feature" ) }
 				</span>
 			</div>
 			<div className="pricing_table-cta-wrapper">
